@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fitness Freak</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Lexend:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900"
+    />
+    <style>
+     
+      body {
+        font-family: Lexend, "Noto Sans", sans-serif;
+      }
+      .muscle-area {
+        position: absolute;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .muscle-area:hover {
+        background: rgba(74, 194, 4, 0.2);
+      }
+      .body-container {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .body-image {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  
+  </head>
+
+  <body class="bg-[#231910] text-white">
+    <div class="flex flex-col min-h-screen">
+      <!-- Header -->
+      <header class="flex items-center justify-between border-b border-[#493422] px-10 py-3">
+        <div class="flex items-center gap-8">
+          <div class="flex items-center gap-4 text-white">
+            <svg class="w-5 h-5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M47.24 24 24 47.24 0.76 24 24 0.76 47.24 24ZM12.24 21h23.52L24 9.24 12.24 21Z"
+                fill="currentColor"
+              />
+            </svg>
+            <h2 class="text-lg font-bold tracking-[-0.015em]">Fitness Freak</h2>
+          </div>
+          <nav class="flex items-center gap-6">
+            <a class="text-sm font-medium" href="#">Home</a>
+            <a class="text-sm font-medium" href="#">Workouts</a>
+            <a class="text-sm font-medium" href="#">Diet Plans</a>
+            <a class="text-sm font-medium" href="#">About</a>
+            <a class="text-sm font-medium" href="#">Contact</a>
+          </nav>
+        </div>
+        <div class="flex gap-4">
+          <input
+            class="px-4 py-2 rounded-xl bg-[#493422] text-white placeholder-[#cbaa90] border-none"
+            placeholder="Search"
+          />
+          <button class="px-4 py-2 rounded-xl bg-[#493422] font-bold">Get Started</button>
+        </div>
+      </header>
+
+      <!-- Main Section -->
+      <main class="flex-1 px-4 md:px-40 py-5">
+        <h1 class="text-center text-[32px] font-bold pb-6">Explore Workouts by Muscle Group</h1>
+
+        <!-- Toggle Button -->
+        <div class="flex justify-center pb-4">
+          <button onclick="toggleView()" class="bg-[#f2730c] text-white font-bold px-4 py-2 rounded-xl" id="toggleViewBtn">
+            Switch to Back View
+          </button>
+        </div>
+
+        <!-- Body Images Container -->
+        <div class="relative w-full max-w-md mx-auto aspect-[2/3] rounded-xl overflow-hidden">
+          <!-- Front View -->
+          <div id="frontView" class="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-xl"
+               style="background-image: url('images/front.png'); display: block;">
+
+          <!-- Chest -->
+          <div class="muscle-area" 
+               style="top: 17%; left: 33%; width: 30%; height: 30%; clip-path: polygon(51% 35%, 72% 35%, 86% 39%, 85% 54%, 68% 60%, 48% 57%, 29% 62%, 15% 55%, 13% 39%, 26% 36%);"
+
+               onclick="showWorkout('Chest')" 
+               title="Chest"></div>
+               
+          <!-- Left Bicep -->
+          <div class="muscle-area"
+               style="top: 40%; left: 25%; width: 10%; height: 15%; clip-path: polygon(30% 0%, 100% 20%, 70% 100%, 0% 80%);"
+               onclick="showWorkout('Biceps Left')"
+               title="Left Bicep"></div>
+               
+          <!-- Right Bicep -->
+          <div class="muscle-area"
+               style="top: 35%; left: 65%; width: 10%; height: 15%; clip-path: polygon(0% 20%, 70% 0%, 100% 80%, 30% 100%);"
+               onclick="showWorkout('Biceps Right')"
+               title="Right Bicep"></div>
+               
+          <!-- Abs -->
+          <div class="muscle-area"
+               style="top: 45%; left: 42%; width: 16%; height: 12%; clip-path: polygon(0% 15%, 15% 0%, 85% 0%, 100% 15%, 85% 100%, 15% 100%);"
+               onclick="showWorkout('Abs')"
+               title="Abs"></div>
+
+            <!-- QUADS -->
+            <button class="absolute top-[58%] left-[40%] w-6 h-6 rounded-full hover:bg-white/20"
+                    onclick="showWorkout('Quads Left')" title="Left Quad"></button>
+
+            <button class="absolute top-[58%] left-[52%] w-6 h-6 rounded-full hover:bg-white/20"
+                    onclick="showWorkout('Quads Right')" title="Right Quad"></button>
+          </div>
+
+          <!-- Back View -->
+          <div id="backView" class="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-xl"
+               style="background-image: url('images/back.png'); display: none;">
+
+             <!-- Back muscles -->
+          <div class="muscle-area"
+               style="top: 20%; left: 40%; width: 20%; height: 15%; clip-path: polygon(0% 20%, 20% 0%, 80% 0%, 100% 20%, 80% 100%, 20% 100%);"
+               onclick="showWorkout('Upper Back')"
+               title="Back"></div>
+
+            <!-- TRAPS -->
+            <button class="absolute top-[15%] left-[44%] w-6 h-6 rounded-full hover:bg-white/20"
+                    onclick="showWorkout('Trapezius')" title="Trapezius"></button>
+
+            <!-- TRICEPS -->
+            <button class="absolute top-[28%] left-[33%] w-6 h-6 rounded-full hover:bg-white/20"
+                    onclick="showWorkout('Triceps Left')" title="Left Triceps"></button>
+
+            <button class="absolute top-[28%] left-[62%] w-6 h-6 rounded-full hover:bg-white/20"
+                    onclick="showWorkout('Triceps Right')" title="Right Triceps"></button>
+
+            <!-- GLUTES -->
+            <button class="absolute top-[44%] left-[42%] w-6 h-6 rounded-full hover:bg-white/20"
+                    onclick="showWorkout('Glutes')" title="Glutes"></button>
+
+            <!-- HAMSTRINGS -->
+            <button class="absolute top-[58%] left-[41%] w-6 h-6 rounded-full hover:bg-white/20"
+                    onclick="showWorkout('Hamstrings Left')" title="Left Hamstring"></button>
+
+            <button class="absolute top-[58%] left-[53%] w-6 h-6 rounded-full hover:bg-white/20"
+                    onclick="showWorkout('Hamstrings Right')" title="Right Hamstring"></button>
+          </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      let isFront = true;
+
+      function toggleView() {
+        isFront = !isFront;
+        document.getElementById("frontView").style.display = isFront ? "block" : "none";
+        document.getElementById("backView").style.display = isFront ? "none" : "block";
+        document.getElementById("toggleViewBtn").innerText = isFront
+          ? "Switch to Back View"
+          : "Switch to Front View";
+      }
+
+      function showWorkout(muscle) {
+        alert("Showing workouts for: " + muscle);
+        // You can enhance this to show modal or navigate to a workout page
+      }
+    </script>
+  </body>
+</html>
