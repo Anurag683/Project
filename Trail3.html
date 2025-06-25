@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <title>Fitness Freak</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- For PNG favicon -->
-<link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       rel="stylesheet"
@@ -17,13 +16,26 @@
       body {
         font-family: Lexend, "Noto Sans", sans-serif;
       }
+
+      .muscle-hotspot {
+        transition: transform 0.2s ease, background-color 0.2s ease;
+      }
+
+      .muscle-hotspot:hover {
+        transform: scale(1.3);
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      #frontView, #backView {
+        transition: opacity 0.2s ease;
+      }
     </style>
   </head>
 
   <body class="bg-[#231910] text-white">
     <div class="flex flex-col min-h-screen">
       <!-- Header -->
-      <header class="flex items-center justify-between border-b border-[#493422] px-10 py-3">
+      <header class="flex items-center justify-between border-b border-[#493422] px-4 md:px-10 py-3">
         <div class="flex items-center gap-8">
           <div class="flex items-center gap-4 text-white">
             <svg class="w-5 h-5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,16 +46,16 @@
                 fill="currentColor"
               />
             </svg>
-<a href="Trail3.html" class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">
-  Fitness Freak
-</a>
+            <a href="Trail3.html" class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">
+              Fitness Freak
+            </a>
           </div>
-          <nav class="flex items-center gap-6">
-            <a class="text-sm font-medium" href="Trail3.html">Home</a>
-            <a class="text-sm font-medium" href="Workouts.html">Workouts</a>
-            <a class="text-sm font-medium" href="Diet Plans.html">Diet Plans</a>
-            <a class="text-sm font-medium" href="About.html">About</a>
-            <a class="text-sm font-medium" href="Contact.html">Contact</a>
+          <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="Trail3.html" class="hover:text-orange-400">Home</a>
+            <a href="Workouts.html" class="hover:text-orange-400">Workouts</a>
+            <a href="Diet Plans.html" class="hover:text-orange-400">Diet Plans</a>
+            <a href="About.html" class="hover:text-orange-400">About</a>
+            <a href="Contact.html" class="hover:text-orange-400">Contact</a>
           </nav>
         </div>
         <div class="flex gap-4">
@@ -51,7 +63,6 @@
             class="px-4 py-2 rounded-xl bg-[#493422] text-white placeholder-[#cbaa90] border-none"
             placeholder="Search"
           />
-
         </div>
       </header>
 
@@ -61,87 +72,88 @@
 
         <!-- Toggle Button -->
         <div class="flex justify-center pb-4">
-          <button onclick="toggleView()" class="bg-[#f2730c] text-white font-bold px-4 py-2 rounded-xl" id="toggleViewBtn">
+          <button onclick="toggleView()" class="bg-[#f2730c] text-white font-bold px-4 py-2 rounded-xl transition duration-300 hover:bg-[#ff8f3e]" id="toggleViewBtn">
             Switch to Back View
           </button>
         </div>
 
         <!-- Body Images Container -->
-        <div class="relative w-full max-w-md mx-auto aspect-[2/3] rounded-xl overflow-hidden">
+        <div class="relative w-full max-w-sm md:max-w-md mx-auto aspect-[2/3] rounded-xl overflow-hidden">
           <!-- Front View -->
-          <div id="frontView" class="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-xl"
-               style="background-image: url('images/front.png'); display: block;">
-
-               <!-- Chest-->
-           <a href="Chest.html" title="Chest"
-   class="absolute top-[30%] left-[45%] w-6 h-6 rounded-full hover:bg-white/20 block">
-</a>
-            <!-- BICEPS -->
-<a href="Biceps.html" title="Left Bicep"
-   class="absolute top-[35%] left-[30%] w-6 h-6 rounded-full hover:bg-white/20 block"></a>
-
-<a href="Biceps.html" title="Right Bicep"
-   class="absolute top-[35%] left-[60%] w-6 h-6 rounded-full hover:bg-white/20 block"></a>
-
-<!-- ABS -->
-<a href="Abs.html" title="Abs"
-   class="absolute top-[38%] left-[44%] w-6 h-6 rounded-full hover:bg-white/20 block"></a>
-
-<!-- QUADS -->
-<a href="Quads.html" title="Left Quad"
-   class="absolute top-[58%] left-[40%] w-6 h-6 rounded-full hover:bg-white/20 block"></a>
-
-<a href="Quads.html" title="Right Quad"
-   class="absolute top-[58%] left-[52%] w-6 h-6 rounded-full hover:bg-white/20 block"></a>
-
+          <div id="frontView" class="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-xl opacity-100"
+               style="background-image: url('images/front.png');">
+            <a href="Chest.html" title="Chest" class="absolute top-[30%] left-[45%] w-6 h-6 rounded-full muscle-hotspot block"></a>
+            <a href="Biceps.html" title="Left Bicep" class="absolute top-[35%] left-[30%] w-6 h-6 rounded-full muscle-hotspot block"></a>
+            <a href="Biceps.html" title="Right Bicep" class="absolute top-[35%] left-[60%] w-6 h-6 rounded-full muscle-hotspot block"></a>
+            <a href="Abs.html" title="Abs" class="absolute top-[38%] left-[44%] w-6 h-6 rounded-full muscle-hotspot block"></a>
+            <a href="Quads.html" title="Left Quad" class="absolute top-[58%] left-[40%] w-6 h-6 rounded-full muscle-hotspot block"></a>
+            <a href="Quads.html" title="Right Quad" class="absolute top-[58%] left-[52%] w-6 h-6 rounded-full muscle-hotspot block"></a>
           </div>
 
           <!-- Back View -->
-          <div id="backView" class="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-xl"
-               style="background-image: url('images/back.png'); display: none;">
-
-            <!-- BACK -->
-<a href="Back.html" title="Back"
-   class="absolute top-[21%] left-[48%] w-6 h-6 rounded-full hover:bg-white/20 block"></a>
-
-<!-- TRAPS -->
-<a href="Traps.html" title="Trapezius"
-   class="absolute top-[15%] left-[44%] w-6 h-6 rounded-full hover:bg-white/20 block"></a>
-
-<!-- TRICEPS -->
-<a href="Triceps.html" title="Left Triceps"
-   class="absolute top-[28%] left-[33%] w-6 h-6 rounded-full hover:bg-white/20 block"></a>
-
-<a href="Triceps.html" title="Right Triceps"
-   class="absolute top-[28%] left-[62%] w-6 h-6 rounded-full hover:bg-white/20 block"></a>
-
-<!-- GLUTES -->
-<a href="Glutes.html" title="Glutes"
-   class="absolute top-[44%] left-[42%] w-6 h-6 rounded-full hover:bg-white/20 block"></a>
-
-<!-- HAMSTRINGS -->
-<a href="Hamstrings.html" title="Left Hamstring"
-   class="absolute top-[58%] left-[41%] w-6 h-6 rounded-full hover:bg-white/20 block"></a>
-
-<a href="Hamstrings.html" title="Right Hamstring"
-   class="absolute top-[58%] left-[53%] w-6 h-6 rounded-full hover:bg-white/20 block"></a>
-
+          <div id="backView" class="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-xl opacity-0 pointer-events-none"
+               style="background-image: url('images/back.png');">
+            <a href="Back.html" title="Back" class="absolute top-[21%] left-[48%] w-6 h-6 rounded-full muscle-hotspot block"></a>
+            <a href="Traps.html" title="Trapezius" class="absolute top-[15%] left-[44%] w-6 h-6 rounded-full muscle-hotspot block"></a>
+            <a href="Triceps.html" title="Left Triceps" class="absolute top-[28%] left-[33%] w-6 h-6 rounded-full muscle-hotspot block"></a>
+            <a href="Triceps.html" title="Right Triceps" class="absolute top-[28%] left-[62%] w-6 h-6 rounded-full muscle-hotspot block"></a>
+            <a href="Glutes.html" title="Glutes" class="absolute top-[44%] left-[42%] w-6 h-6 rounded-full muscle-hotspot block"></a>
+            <a href="Hamstrings.html" title="Left Hamstring" class="absolute top-[58%] left-[41%] w-6 h-6 rounded-full muscle-hotspot block"></a>
+            <a href="Hamstrings.html" title="Right Hamstring" class="absolute top-[58%] left-[53%] w-6 h-6 rounded-full muscle-hotspot block"></a>
           </div>
         </div>
-        <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Gym Terminology</h2>
-            <pre class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
-BMR: Basal Metabolic Rate - The amount of energy expended by the body at rest to maintain basic physiological functions.
-BMI: Body Mass Index - A measure of body fat based on height and weight.
-Bulking: A phase of training and nutrition aimed at increasing muscle mass and size.
-Cutting: A phase of training and nutrition aimed at reducing body fat while preserving muscle mass.
-Calisthenics: Bodyweight exercises performed without the use of additional equipment, focusing on strength, flexibility, and body control.
-Cardio: Aerobic exercises designed to improve cardiovascular health and endurance.
-Conditioning: Improving cardiovascular fitness, endurance, and overall physical conditioning.
-Core: The muscles of the abdomen, lower back, and pelvis that stabilize and support the spine.
-Drop Set: A technique where weight is reduced between sets to extend the duration of a working set and increase muscle fatigue.
-Failure: Inability to complete a repetition or set with proper form due to muscle fatigue.
-</pre>
+
+        <!-- Terminology Section -->
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Gym Terminology</h2>
+<div class="grid gap-4 px-4 md:grid-cols-2">
+  <div class="bg-[#2f2018] rounded-xl p-4 shadow-md hover:bg-[#3a281d] transition">
+    <h3 class="text-orange-400 font-semibold text-lg">BMR</h3>
+    <p class="text-sm text-white">Basal Metabolic Rate - Energy your body uses at rest to maintain life functions.</p>
+  </div>
+  <div class="bg-[#2f2018] rounded-xl p-4 shadow-md hover:bg-[#3a281d] transition">
+    <h3 class="text-orange-400 font-semibold text-lg">BMI</h3>
+    <p class="text-sm text-white">Body Mass Index - A calculation of body fat based on height and weight.</p>
+  </div>
+  <div class="bg-[#2f2018] rounded-xl p-4 shadow-md hover:bg-[#3a281d] transition">
+    <h3 class="text-orange-400 font-semibold text-lg">Bulking</h3>
+    <p class="text-sm text-white">Training and nutrition phase to increase muscle mass and size.</p>
+  </div>
+  <div class="bg-[#2f2018] rounded-xl p-4 shadow-md hover:bg-[#3a281d] transition">
+    <h3 class="text-orange-400 font-semibold text-lg">Cutting</h3>
+    <p class="text-sm text-white">Phase focused on fat loss while maintaining muscle mass.</p>
+  </div>
+  <div class="bg-[#2f2018] rounded-xl p-4 shadow-md hover:bg-[#3a281d] transition">
+    <h3 class="text-orange-400 font-semibold text-lg">Calisthenics</h3>
+    <p class="text-sm text-white">Bodyweight training to build strength, flexibility, and control.</p>
+  </div>
+  <div class="bg-[#2f2018] rounded-xl p-4 shadow-md hover:bg-[#3a281d] transition">
+    <h3 class="text-orange-400 font-semibold text-lg">Cardio</h3>
+    <p class="text-sm text-white">Aerobic exercise that improves heart and lung health.</p>
+  </div>
+  <div class="bg-[#2f2018] rounded-xl p-4 shadow-md hover:bg-[#3a281d] transition">
+    <h3 class="text-orange-400 font-semibold text-lg">Conditioning</h3>
+    <p class="text-sm text-white">Enhancing overall fitness, endurance, and recovery ability.</p>
+  </div>
+  <div class="bg-[#2f2018] rounded-xl p-4 shadow-md hover:bg-[#3a281d] transition">
+    <h3 class="text-orange-400 font-semibold text-lg">Core</h3>
+    <p class="text-sm text-white">Muscles that stabilize the spine - abs, back, and pelvis.</p>
+  </div>
+  <div class="bg-[#2f2018] rounded-xl p-4 shadow-md hover:bg-[#3a281d] transition">
+    <h3 class="text-orange-400 font-semibold text-lg">Drop Set</h3>
+    <p class="text-sm text-white">Training method where you reduce weight during a set to increase fatigue.</p>
+  </div>
+  <div class="bg-[#2f2018] rounded-xl p-4 shadow-md hover:bg-[#3a281d] transition">
+    <h3 class="text-orange-400 font-semibold text-lg">Failure</h3>
+    <p class="text-sm text-white">The point at which a muscle can no longer complete a rep with proper form.</p>
+  </div>
+</div>
+
       </main>
+
+      <!-- Footer -->
+      <footer class="text-center py-4 text-sm text-[#cbaa90] border-t border-[#493422]">
+        © 2025 Fitness Freak - Stay Fit, Stay Strong 💪
+      </footer>
     </div>
 
     <!-- Scripts -->
@@ -150,16 +162,17 @@ Failure: Inability to complete a repetition or set with proper form due to muscl
 
       function toggleView() {
         isFront = !isFront;
-        document.getElementById("frontView").style.display = isFront ? "block" : "none";
-        document.getElementById("backView").style.display = isFront ? "none" : "block";
-        document.getElementById("toggleViewBtn").innerText = isFront
-          ? "Switch to Back View"
-          : "Switch to Front View";
-      }
+        const frontView = document.getElementById("frontView");
+        const backView = document.getElementById("backView");
+        const toggleBtn = document.getElementById("toggleViewBtn");
 
-      function showWorkout(muscle) {
-        alert("Showing workouts for: " + muscle);
-        // You can enhance this to show modal or navigate to a workout page
+        frontView.style.opacity = isFront ? "1" : "0";
+        frontView.style.pointerEvents = isFront ? "auto" : "none";
+
+        backView.style.opacity = isFront ? "0" : "1";
+        backView.style.pointerEvents = isFront ? "none" : "auto";
+
+        toggleBtn.innerText = isFront ? "Switch to Back View" : "Switch to Front View";
       }
     </script>
   </body>
