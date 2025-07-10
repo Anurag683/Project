@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
   <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
     href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
-
   <title>Diet Plans | Fitness Freak</title>
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-
+  <link rel="icon" type="image/png" href="images/favicon.png" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
 
@@ -17,18 +14,18 @@
   <div class="relative flex size-full min-h-screen flex-col bg-[#231810] dark group/design-root overflow-x-hidden"
     style='font-family: Lexend, "Noto Sans", sans-serif;'>
     <div class="layout-container flex h-full grow flex-col">
+      <!-- Header -->
       <header
         class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#493322] px-10 py-3">
         <div class="flex items-center gap-8">
           <div class="flex items-center gap-4">
-          <img src="images/favicon.png" alt="Logo" class="w-8 h-8 object-contain" />
-
-            <a href="Trail3.html" class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">
+            <img src="images/favicon.png" alt="Logo" class="w-8 h-8 object-contain" />
+            <a href="Home.html" class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">
               Fitness Freak
             </a>
           </div>
           <div class="flex items-center gap-9">
-            <a class="text-white text-sm font-medium leading-normal" href="Trail3.html">Home</a>
+            <a class="text-white text-sm font-medium leading-normal" href="Home.html">Home</a>
             <a class="text-white text-sm font-medium leading-normal" href="Workouts.html">Workouts</a>
             <a class="text-white text-sm font-medium leading-normal" href="Contact.html">Contact us</a>
             <a class="text-white text-sm font-medium leading-normal" href="About.html">About us</a>
@@ -37,131 +34,168 @@
         <div class="flex gap-4">
           <input
             class="px-4 py-2 rounded-xl bg-[#493422] text-white placeholder-[#cbaa90] border-none"
-            placeholder="Search"
-          />
+            placeholder="Search" />
         </div>
       </header>
+
+      <!-- Main Content -->
       <div class="px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+
+          <!-- Intro -->
           <div class="flex flex-wrap justify-between gap-3 p-4">
             <div class="flex min-w-72 flex-col gap-3">
               <p class="text-white tracking-light text-[32px] font-bold leading-tight">Diet Plans</p>
               <p class="text-[#cba990] text-sm font-normal leading-normal">
-                Find the perfect diet plan to fuel your fitness journey. Explore a variety of options tailored to your
-                preferences and goals.
+                Find the perfect diet plan to fuel your fitness journey. Explore a variety of options tailored to your preferences and goals.
               </p>
             </div>
           </div>
 
-          <div class="flex gap-3 p-3 flex-wrap pr-4">
-            <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#493322] pl-4 pr-2">
-              <p class="text-white text-sm font-medium leading-normal">Dietary Preference</p>
-              <div class="text-white" data-icon="CaretDown" data-size="20px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                  viewBox="0 0 256 256">
-                  <path
-                    d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
-                  </path>
-                </svg>
-              </div>
-            </button>
-            <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#493322] pl-4 pr-2">
-              <p class="text-white text-sm font-medium leading-normal">Meal Type</p>
-              <div class="text-white" data-icon="CaretDown" data-size="20px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                  viewBox="0 0 256 256">
-                  <path
-                    d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
-                  </path>
-                </svg>
-              </div>
-            </button>
-            <button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#493322] pl-4 pr-2">
-              <p class="text-white text-sm font-medium leading-normal">Calorie Range</p>
-              <div class="text-white" data-icon="CaretDown" data-size="20px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                  viewBox="0 0 256 256">
-                  <path
-                    d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
-                  </path>
-                </svg>
-              </div>
-            </button>
-          </div>
+        <!-- Filters -->
+<div class="relative flex gap-3 p-3 flex-wrap pr-4 z-50">
+  <!-- Dietary Preference with Dropdown -->
+  <div class="relative">
+    <button id="dietPrefBtn" class="flex h-8 items-center justify-center gap-x-2 rounded-full bg-[#493322] pl-4 pr-2">
+      <p class="text-white text-sm font-medium leading-normal">Dietary Preference</p>
+      <div class="text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+          viewBox="0 0 256 256">
+          <path
+            d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+          </path>
+        </svg>
+      </div>
+    </button>
+
+    <!-- Dropdown -->
+    <div id="dietPrefDropdown"
+      class="absolute mt-2 hidden w-40 rounded-lg bg-[#493322] shadow-lg ring-1 ring-[#cba990]">
+      <a href="#" class="block px-4 py-2 text-white text-sm hover:bg-[#5c3a2e]">Keto</a>
+      <a href="#" class="block px-4 py-2 text-white text-sm hover:bg-[#5c3a2e]">High Protein</a>
+      <a href="#" class="block px-4 py-2 text-white text-sm hover:bg-[#5c3a2e]">Low Carb</a>
+    </div>
+  </div>
+
+  <!-- Meal Type with Dropdown -->
+  <div class="relative">
+    <button id="mealTypeBtn"
+      class="flex h-8 items-center justify-center gap-x-2 rounded-full bg-[#493322] pl-4 pr-2">
+      <p class="text-white text-sm font-medium leading-normal">Meal Type</p>
+      <div class="text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+          viewBox="0 0 256 256">
+          <path
+            d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
+          </path>
+        </svg>
+      </div>
+    </button>
+
+    <!-- Dropdown -->
+    <div id="mealTypeDropdown"
+      class="absolute mt-2 hidden w-40 rounded-lg bg-[#493322] shadow-lg ring-1 ring-[#cba990]">
+      <a href="#" class="block px-4 py-2 text-white text-sm hover:bg-[#5c3a2e]">Vegan</a>
+      <a href="#" class="block px-4 py-2 text-white text-sm hover:bg-[#5c3a2e]">Non-Vegan</a>
+    </div>
+  </div>
+</div>
+
+<!-- Script -->
+<script>
+  // Meal Type
+  const mealBtn = document.getElementById('mealTypeBtn');
+  const mealDropdown = document.getElementById('mealTypeDropdown');
+
+  mealBtn.addEventListener('click', () => {
+    mealDropdown.classList.toggle('hidden');
+  });
+
+  // Dietary Preference
+  const dietBtn = document.getElementById('dietPrefBtn');
+  const dietDropdown = document.getElementById('dietPrefDropdown');
+
+  dietBtn.addEventListener('click', () => {
+    dietDropdown.classList.toggle('hidden');
+  });
+
+  // Close any dropdown if clicked outside
+  document.addEventListener('click', function (e) {
+    if (!mealBtn.contains(e.target) && !mealDropdown.contains(e.target)) {
+      mealDropdown.classList.add('hidden');
+    }
+    if (!dietBtn.contains(e.target) && !dietDropdown.contains(e.target)) {
+      dietDropdown.classList.add('hidden');
+    }
+  });
+</script>
+
+
+          <!-- Diet Plan -->
           <div class="p-4 @container">
-            <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start">
-              <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                style='background-image: url("images/d1.png");'></div>
-              <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4">
-                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Balanced Body</p>
-                <div class="flex items-end gap-3 justify-between">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-[#cba990] text-base font-normal leading-normal">For Muscle Growth &amp; Overall
-                      Health</p>
-                    <p class="text-[#cba990] text-base font-normal leading-normal">
-                      A balanced diet plan focusing on whole foods, lean proteins, and complex carbohydrates to support
-                      muscle growth and overall health.
-                    </p>
-                  </div>
+            <a href="balanced.html" class="block rounded-xl hover:scale-[1.02] hover:shadow-lg transition-all duration-300">
+              <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start bg-[#2d1a12]">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("images/d1.png");'></div>
+                <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4">
+                  <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Balanced Body</p>
+                  <p class="text-[#cba990] text-base font-normal leading-normal">For Muscle Growth &amp; Overall Health</p>
+                  <p class="text-[#cba990] text-base font-normal leading-normal">
+                    A balanced diet plan focusing on whole foods, lean proteins, and complex carbohydrates.
+                  </p>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
+
           <div class="p-4 @container">
-            <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start">
-              <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                style='background-image: url("images/d2.png");'></div>
-              <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4">
-                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Vegan Vitality</p>
-                <div class="flex items-end gap-3 justify-between">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-[#cba990] text-base font-normal leading-normal">Plant-Based Nutrition</p>
-                    <p class="text-[#cba990] text-base font-normal leading-normal">
-                      A plant-based diet plan rich in fruits, vegetables, and plant-based proteins to support a healthy
-                      lifestyle.
-                    </p>
-                  </div>
+            <a href="vegan.html" class="block rounded-xl hover:scale-[1.02] hover:shadow-lg transition-all duration-300">
+              <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start bg-[#2d1a12]">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("images/d2.png");'></div>
+                <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4">
+                  <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Vegan Vitality</p>
+                  <p class="text-[#cba990] text-base font-normal leading-normal">Plant-Based Nutrition</p>
+                  <p class="text-[#cba990] text-base font-normal leading-normal">
+                    A plant-based diet plan rich in fruits, vegetables, and plant-based proteins.
+                  </p>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
+
           <div class="p-4 @container">
-            <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start">
-              <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                style='background-image: url("images/d4.png");'></div>
-              <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4">
-                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Low-Carb Lifestyle</p>
-                <div class="flex items-end gap-3 justify-between">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-[#cba990] text-base font-normal leading-normal">Weight Management &amp; Blood Sugar
-                      Control</p>
-                    <p class="text-[#cba990] text-base font-normal leading-normal">
-                      A diet plan focusing on reducing carbohydrate intake to support weight management and blood sugar
-                      control.
-                    </p>
-                  </div>
+            <a href="lowcarb.html" class="block rounded-xl hover:scale-[1.02] hover:shadow-lg transition-all duration-300">
+              <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start bg-[#2d1a12]">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("images/d4.png");'></div>
+                <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4">
+                  <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Low-Carb Lifestyle</p>
+                  <p class="text-[#cba990] text-base font-normal leading-normal">Weight Management &amp; Blood Sugar Control</p>
+                  <p class="text-[#cba990] text-base font-normal leading-normal">
+                    A diet plan focusing on reducing carbs to support weight management and glucose levels.
+                  </p>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
+
           <div class="p-4 @container">
-            <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start">
-              <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                style='background-image: url("images/d5.png");'></div>
-              <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4">
-                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Athlete's Advantage</p>
-                <div class="flex items-end gap-3 justify-between">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-[#cba990] text-base font-normal leading-normal">Performance &amp; Recovery</p>
-                    <p class="text-[#cba990] text-base font-normal leading-normal">
-                      A diet plan tailored for athletes, emphasizing high protein intake and nutrient-dense foods to
-                      support performance and recovery.
-                    </p>
-                  </div>
+            <a href="athlete.html" class="block rounded-xl hover:scale-[1.02] hover:shadow-lg transition-all duration-300">
+              <div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start bg-[#2d1a12]">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("images/d5.png");'></div>
+                <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4">
+                  <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Athlete's Advantage</p>
+                  <p class="text-[#cba990] text-base font-normal leading-normal">Performance &amp; Recovery</p>
+                  <p class="text-[#cba990] text-base font-normal leading-normal">
+                    Designed for athletes: high protein & nutrient-dense foods to boost energy and recovery.
+                  </p>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
+
         </div>
       </div>
     </div>

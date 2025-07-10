@@ -1,231 +1,186 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
+<head>
+  <title>Workouts | Fitness Freak</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link
+    rel="stylesheet"
+    as="style"
+    onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Lexend:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900"
+  />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
 
-    <title>Workouts | Fitness Freak</title>
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+<body class="bg-[#231810] text-white" style='font-family: Lexend, "Noto Sans", sans-serif;'>
+  <div class="flex flex-col min-h-screen overflow-x-hidden">
+    <!-- Header -->
+    <header class="flex items-center justify-between border-b border-[#493322] px-10 py-3">
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-4">
+          <img src="images/favicon.png" alt="Logo" class="w-8 h-8 object-contain" />
+          <a href="Home.html" class="text-white text-lg font-bold tracking-[-0.015em]">Fitness Freak</a>
+        </div>
+        <nav class="flex gap-9">
+          <a href="Home.html" class="text-sm font-medium">Home</a>
+          <a href="Diet Plans.html" class="text-sm font-medium">Diet Plans</a>
+          <a href="Contact.html" class="text-sm font-medium">Contact us</a>
+          <a href="About.html" class="text-sm font-medium">About us</a>
+        </nav>
+      </div>
+      <div class="flex gap-4">
+        <input class="px-4 py-2 rounded-xl bg-[#493422] text-white placeholder-[#cbaa90] border-none" placeholder="Search" />
+      </div>
+    </header>
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#231810] dark group/design-root overflow-x-hidden" style='font-family: Lexend, "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#493322] px-10 py-3">
-          <div class="flex items-center gap-8">
-            <div class="flex items-center gap-4">
-            <img src="images/favicon.png" alt="Logo" class="w-8 h-8 object-contain" />
+    <!-- Content -->
+    <main class="px-40 py-5 grow flex justify-center">
+      <div class="w-full max-w-[960px] flex flex-col gap-4">
+        <!-- Title -->
+        <div class="p-4">
+          <h1 class="text-[32px] font-bold">Workouts</h1>
+          <p class="text-[#cba990] text-sm">Explore a variety of workouts tailored to your fitness goals.</p>
+        </div>
 
-<a href="Trail3.html" class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">
-  Fitness Freak
-</a>
-            </div>
-            <div class="flex items-center gap-9">
-              <a class="text-white text-sm font-medium leading-normal" href="Trail3.html">Home</a>
-              <a class="text-white text-sm font-medium leading-normal" href="Diet Plans.html">Diet Plans</a>
-              <a class="text-white text-sm font-medium leading-normal" href="Contact.html">Contact us</a>
-              <a class="text-white text-sm font-medium leading-normal" href="About.html">About us</a>
+        <!-- Filters -->
+        <div class="flex gap-3 p-3 flex-wrap">
+          <!-- Category Dropdown -->
+          <div class="relative inline-block text-left z-10">
+            <button onclick="toggleDropdown('categoryDropdownMenu')" class="flex h-8 items-center gap-x-2 rounded-full bg-[#493322] pl-4 pr-2">
+              <p class="text-white text-sm font-medium">Category</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" class="text-white">
+                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/>
+              </svg>
+            </button>
+            <div id="categoryDropdownMenu" class="hidden absolute mt-2 w-48 rounded-md bg-[#2f2018] shadow-lg ring-1 ring-[#cba990]">
+              <a href="workout/Strength.html" class="block px-4 py-2 text-sm hover:bg-[#5e4032]">Strength</a>
+              <a href="workout/Cardio.html" class="block px-4 py-2 text-sm hover:bg-[#5e4032]">Cardio</a>
+              <a href="workout/Core.html" class="block px-4 py-2 text-sm hover:bg-[#5e4032]">Core</a>
+              <a href="workout/Full body.html" class="block px-4 py-2 text-sm hover:bg-[#5e4032]">Full Body</a>
             </div>
           </div>
-                       
-          <div class="flex gap-4">
-          <input
-            class="px-4 py-2 rounded-xl bg-[#493422] text-white placeholder-[#cbaa90] border-none"
-            placeholder="Search"
-          />
+
+          <!-- Muscle Group Dropdown -->
+          <div class="relative inline-block text-left z-10">
+            <button onclick="toggleDropdown('muscleDropdownMenu')" class="flex h-8 items-center gap-x-2 rounded-full bg-[#493322] pl-4 pr-2">
+              <p class="text-white text-sm font-medium">Muscle Group</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" class="text-white">
+                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/>
+              </svg>
+            </button>
+            <div id="muscleDropdownMenu" class="hidden absolute mt-2 w-52 rounded-md bg-[#2f2018] shadow-lg ring-1 ring-[#cba990]">
+              <a href="Chest.html" class="block px-4 py-2 text-sm hover:bg-[#5e4032]">Chest</a>
+              <a href="Back.html" class="block px-4 py-2 text-sm hover:bg-[#5e4032]">Back</a>
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-[#5e4032]">Shoulders</a>
+              <a href="Biceps.html" class="block px-4 py-2 text-sm hover:bg-[#5e4032]">Biceps</a>
+              <a href="Triceps.html" class="block px-4 py-2 text-sm hover:bg-[#5e4032]">Triceps</a>
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-[#5e4032]">Legs</a>
+              <a href="Abs.html" class="block px-4 py-2 text-sm hover:bg-[#5e4032]">Abs</a>
+            </div>
+          </div>
         </div>
-               
-        </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4">
-              <div class="flex min-w-72 flex-col gap-3">
-                <p class="text-white tracking-light text-[32px] font-bold leading-tight">Workouts</p>
-                <p class="text-[#cba990] text-sm font-normal leading-normal">Explore a variety of workouts tailored to your fitness goals.</p>
-              </div>
-            </div>
-            <div class="flex gap-3 p-3 flex-wrap pr-4">
-              <div class="relative inline-block text-left">
-  <!-- Category Button -->
-  <button onclick="toggleDropdown()" class="flex h-8 items-center justify-center gap-x-2 rounded-full bg-[#493322] pl-4 pr-2">
-    <p class="text-white text-sm font-medium leading-normal">Category</p>
-    <div class="text-white">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-        <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/>
-      </svg>
+
+        <!-- Workout Cards -->
+        <div class="space-y-6 p-4">
+          <!-- Card: Strength Training -->
+    <div class="flex flex-col xl:flex-row items-stretch justify-between gap-4 rounded-xl transition duration-300 hover:bg-[#2f2018] hover:shadow-xl hover:scale-[1.01] p-4">
+    <div class="flex flex-col gap-4 flex-[2_2_0px]">
+    <div>
+      <p class="text-base font-bold text-white">Strength Training</p>
+      <p class="text-[#cba990] text-sm">Build muscle and increase strength with targeted exercises.</p>
     </div>
-  </button>
-
-  <!-- Dropdown Menu -->
-  <div id="dropdownMenu" class="hidden absolute z-10 mt-2 w-48 rounded-md bg-[#2f2018] shadow-lg ring-1 ring-black ring-opacity-20">
-    <div class="py-1">
-      <a href="workout/Strength.html" class="block px-4 py-2 text-sm text-white hover:bg-[#5e4032] hover:text-white">Strength</a>
-      <a href="workout/Cardio.html" class="block px-4 py-2 text-sm text-white hover:bg-[#5e4032] hover:text-white">Cardio</a>
-      <a href="workout/Core.html" class="block px-4 py-2 text-sm text-white hover:bg-[#5e4032] hover:text-white">Core</a>
-      <a href="workout/Full body.html" class="block px-4 py-2 text-sm text-white hover:bg-[#5e4032] hover:text-white">Full Body</a>
-      <!-- Add more items as needed -->
+    <a href="workout/Strength.html">
+      <button
+        class="h-8 px-4 rounded-full bg-[#493322] text-sm font-medium w-fit hover:bg-[#5e4032] hover:scale-105 hover:shadow-lg transition duration-200"
+      >
+        View
+      </button>
+    </a>
     </div>
-  </div>
-</div>
-
-<!-- Toggle Script -->
-<script>
-  function toggleDropdown() {
-    const menu = document.getElementById('dropdownMenu');
-    menu.classList.toggle('hidden');
-  }
-
-  document.addEventListener('click', function (event) {
-    const button = event.target.closest('button');
-    const menu = document.getElementById('dropdownMenu');
-    if (!button || !button.contains(event.target)) {
-      if (!event.target.closest('#dropdownMenu')) {
-        menu.classList.add('hidden');
-      }
-    }
-  });
-</script>
-
-              <div class="relative inline-block text-left">
-  <!-- Muscle Group Button -->
-  <button onclick="toggleMuscleDropdown()" class="flex h-8 items-center justify-center gap-x-2 rounded-full bg-[#493322] pl-4 pr-2">
-    <p class="text-white text-sm font-medium leading-normal">Muscle Group</p>
-    <div class="text-white">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-        <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/>
-      </svg>
+   <div
+    class="aspect-video w-full bg-cover bg-center rounded-xl flex-1"
+    style="background-image: url('images/1.png');"></div>
     </div>
-  </button>
 
-  <!-- Muscle Group Dropdown Menu -->
-  <div id="muscleDropdownMenu" class="hidden absolute z-10 mt-2 w-52 rounded-md bg-[#2f2018] shadow-lg ring-1 ring-black ring-opacity-20">
-    <div class="py-1">
-      <a href="Chest.html" class="block px-4 py-2 text-sm text-white hover:bg-[#5e4032]">Chest</a>
-      <a href="Back.html" class="block px-4 py-2 text-sm text-white hover:bg-[#5e4032]">Back</a>
-      <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-[#5e4032]">Shoulders</a>
-      <a href="Biceps.html" class="block px-4 py-2 text-sm text-white hover:bg-[#5e4032]">Biceps</a>
-      <a href="Triceps.html" class="block px-4 py-2 text-sm text-white hover:bg-[#5e4032]">Triceps</a>
-      <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-[#5e4032]">Legs</a>
-      <a href="Abs.html" class="block px-4 py-2 text-sm text-white hover:bg-[#5e4032]">Abs</a>
-    </div>
-  </div>
-</div>
 
-<!-- Toggle Script -->
-<script>
-  function toggleMuscleDropdown() {
-    const menu = document.getElementById('muscleDropdownMenu');
-    menu.classList.toggle('hidden');
-  }
-
-  document.addEventListener('click', function (event) {
-    const button = event.target.closest('button');
-    const menu = document.getElementById('muscleDropdownMenu');
-    if (!button || !button.contains(event.target)) {
-      if (!event.target.closest('#muscleDropdownMenu')) {
-        menu.classList.add('hidden');
-      }
-    }
-  });
-</script>
-
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-white text-base font-bold leading-tight">Strength Training</p>
-                    <p class="text-[#cba990] text-sm font-normal leading-normal">Build muscle and increase strength with targeted exercises.</p>
-                  </div>
-                  <a href="workout/Strength.html">
-  <button
-    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 flex-row-reverse bg-[#493322] text-white text-sm font-medium leading-normal w-fit"
-  >
-    <span class="truncate">View</span>
-  </button>
-</a>
-
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("images/1.png");'
-                ></div>
+          <!-- Card: Cardio Blast -->
+          <div class="flex flex-col xl:flex-row items-stretch justify-between gap-4 rounded-xl transition duration-300 hover:bg-[#2f2018] hover:shadow-xl hover:scale-[1.01] p-4">
+            <div class="flex flex-col gap-4 flex-[2_2_0px]">
+              <div>
+                <p class="text-base font-bold">Cardio Blast</p>
+                <p class="text-[#cba990] text-sm">Improve cardiovascular health with high-intensity workouts.</p>
               </div>
+             <a href="workout/Cardio.html">
+    <button
+    class="h-8 px-4 rounded-full bg-[#493322] text-sm font-medium w-fit hover:bg-[#5e4032] hover:scale-105 hover:shadow-lg transition duration-200"
+   >
+    View
+   </button>
+    </a>
+
             </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-white text-base font-bold leading-tight">Cardio Blast</p>
-                    <p class="text-[#cba990] text-sm font-normal leading-normal">Improve cardiovascular health with high-intensity workouts.</p>
-                  </div>
-                  <a href="workout/Cardio.html">
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 flex-row-reverse bg-[#493322] text-white text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">View</span>
-                  </button>
-                </a>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("images/2.png");'
-                ></div>
+            <div class="aspect-video w-full bg-cover bg-center rounded-xl flex-1" style="background-image: url('images/2.png');"></div>
+          </div>
+
+          <!-- Card: Core Crusher -->
+          <div class="flex flex-col xl:flex-row items-stretch justify-between gap-4 rounded-xl transition duration-300 hover:bg-[#2f2018] hover:shadow-xl hover:scale-[1.01] p-4">
+            <div class="flex flex-col gap-4 flex-[2_2_0px]">
+              <div>
+                <p class="text-base font-bold">Core Crusher</p>
+                <p class="text-[#cba990] text-sm">Strengthen your core muscles for better stability and posture.</p>
               </div>
+              <a href="workout/Core.html">
+    <button
+    class="h-8 px-4 rounded-full bg-[#493322] text-sm font-medium w-fit hover:bg-[#5e4032] hover:scale-105 hover:shadow-lg transition duration-200"
+   >
+    View
+   </button>
+    </a>
+
             </div>
-            
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-white text-base font-bold leading-tight">Core Crusher</p>
-                    <p class="text-[#cba990] text-sm font-normal leading-normal">Strengthen your core muscles for better stability and posture.</p>
-                  </div>
-                  <a href="workout/Core.html">
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 flex-row-reverse bg-[#493322] text-white text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">View</span>
-                  </button>
-                  </a>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("images/4.png");'
-                ></div>
+            <div class="aspect-video w-full bg-cover bg-center rounded-xl flex-1" style="background-image: url('images/4.png');"></div>
+          </div>
+
+          <!-- Card: Full Body Burn -->
+          <div class="flex flex-col xl:flex-row items-stretch justify-between gap-4 rounded-xl transition duration-300 hover:bg-[#2f2018] hover:shadow-xl hover:scale-[1.01] p-4">
+            <div class="flex flex-col gap-4 flex-[2_2_0px]">
+              <div>
+                <p class="text-base font-bold">Full Body Burn</p>
+                <p class="text-[#cba990] text-sm">Engage all major muscle groups for a comprehensive workout.</p>
               </div>
+              <a href="workout/Full body.html">
+   <button
+    class="h-8 px-4 rounded-full bg-[#493322] text-sm font-medium w-fit hover:bg-[#5e4032] hover:scale-105 hover:shadow-lg transition duration-200"
+    >
+    View
+    </button>
+   </a>
+
             </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-white text-base font-bold leading-tight">Full Body Burn</p>
-                    <p class="text-[#cba990] text-sm font-normal leading-normal">Engage all major muscle groups for a comprehensive workout.</p>
-                  </div>
-                  <a href="workout/Full body.html">
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 flex-row-reverse bg-[#493322] text-white text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">View</span>
-                  </button>
-                  </a>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("images/5.png");'
-                ></div>
-              </div>
-            </div>
+            <div class="aspect-video w-full bg-cover bg-center rounded-xl flex-1" style="background-image: url('images/5.png');"></div>
           </div>
         </div>
       </div>
-    </div>
-  </body>
+    </main>
+  </div>
+
+  <!-- Dropdown Toggle Script -->
+  <script>
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      dropdown.classList.toggle("hidden");
+    }
+
+    document.addEventListener("click", function (event) {
+      const allDropdowns = document.querySelectorAll('[id$="DropdownMenu"]');
+      allDropdowns.forEach(dropdown => {
+        const button = document.querySelector(`[onclick="toggleDropdown('${dropdown.id}')"]`);
+        if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+          dropdown.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+</body>
 </html>
