@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Traps workouts | Fitness Freak</title>
-      <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link
@@ -17,17 +18,134 @@
     }
   </style>
 </head>
-<body class="bg-[#231910] text-white min-h-screen px-4 md:px-40 py-6">
+<body>
+  <div class="relative flex size-full min-h-screen flex-col bg-[#231810] text-white overflow-x-hidden" style='font-family: Lexend, "Noto Sans", sans-serif;'>
+    <!-- Header -->
+    <header class="flex items-center justify-between border-b border-[#493322] px-10 py-4">
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-4">
+          <img src="images/favicon.png" alt="Logo" class="w-8 h-8 object-contain" />
+          <a href="Home.html" class="text-white text-lg font-bold tracking-[-0.015em]">Fitness Freak</a>
+        </div>
+        <nav class="flex items-center gap-9">
+          <a class="text-sm font-medium" href="Home.html">Home</a>
+          <a class="text-sm font-medium" href="Workouts.html">Workouts</a>
+          <a class="text-sm font-medium" href="Contact.html">Contact us</a>
+          <a class="text-sm font-medium" href="About.html">About us</a>
+        </nav>
+      </div>
+    </header>
 
-  <!-- Header -->
-  <header class="flex justify-between items-center mb-8">
-    <a href="Home.html" class="text-xl font-bold tracking-tight">Fitness Freak</a>
-    <a href="Home.html" class="text-sm text-[#f2730c] font-medium underline">← Back to Home</a>
-  </header>
+ <!-- Trapezius Workouts Section -->
+<section class="w-full bg-[#231810] py-16">
+  <div class="max-w-7xl mx-auto px-4 md:px-10 space-y-14">
+    <h2 class="text-3xl font-bold text-center mb-8">Targeted Trapezius Workouts</h2>
 
-  <!-- Page Title -->
-  <h1 class="text-3xl font-bold mb-2">Traps Workouts</h1>
-  <p class="text-[#cba990] mb-6">exercises.</p>
+    <!-- 1. Barbell Shrugs -->
+    <div class="flex flex-col md:flex-row bg-[#493322] rounded-xl overflow-hidden">
+      <img src="images/barbell-shrugs.jpg" alt="Barbell Shrugs" class="md:w-1/2 h-64 object-cover" />
+      <div class="p-6 md:p-10 md:w-1/2 space-y-3">
+        <h3 class="text-2xl font-semibold mb-2">Barbell Shrugs</h3>
+        <ul class="list-disc list-inside text-[#cba990] text-sm space-y-1">
+          <li>Hold barbell with arms straight</li>
+          <li>Shrug shoulders up, pause, lower slow</li>
+          <li>4 sets of 12–15 reps</li>
+        </ul>
+        <a href="https://www.youtube.com/watch?v=pYcpY20QaE8" target="_blank"
+           class="inline-block text-sm px-4 py-2 rounded-full bg-[#f2730c] text-black font-medium hover:bg-[#ffa94d] transition">
+          🎥 Watch Tutorial
+        </a>
+      </div>
+    </div>
+
+    <!-- 2. Dumbbell Shrugs -->
+    <div class="flex flex-col md:flex-row-reverse bg-[#493322] rounded-xl overflow-hidden">
+      <img src="images/dumbbell-shrugs.jpg" alt="Dumbbell Shrugs" class="md:w-1/2 h-64 object-cover" />
+      <div class="p-6 md:p-10 md:w-1/2 space-y-3">
+        <h3 class="text-2xl font-semibold mb-2">Dumbbell Shrugs</h3>
+        <ul class="list-disc list-inside text-[#cba990] text-sm space-y-1">
+          <li>Arms straight by sides</li>
+          <li>Shrug shoulders and squeeze at top</li>
+          <li>3 sets of 15 reps</li>
+        </ul>
+        <a href="https://www.youtube.com/watch?v=8OoN7KrTrU4" target="_blank"
+           class="inline-block text-sm px-4 py-2 rounded-full bg-[#f2730c] text-black font-medium hover:bg-[#ffa94d] transition">
+          🎥 Watch Tutorial
+        </a>
+      </div>
+    </div>
+
+    <!-- 3. Upright Rows -->
+    <div class="flex flex-col md:flex-row bg-[#493322] rounded-xl overflow-hidden">
+      <img src="images/upright-rows.jpg" alt="Upright Rows" class="md:w-1/2 h-64 object-cover" />
+      <div class="p-6 md:p-10 md:w-1/2 space-y-3">
+        <h3 class="text-2xl font-semibold mb-2">Upright Rows</h3>
+        <ul class="list-disc list-inside text-[#cba990] text-sm space-y-1">
+          <li>Pull barbell or dumbbells to chin height</li>
+          <li>Keep elbows above wrists</li>
+          <li>4 sets of 10–12 reps</li>
+        </ul>
+        <a href="https://www.youtube.com/watch?v=JA4d2AzgGzI" target="_blank"
+           class="inline-block text-sm px-4 py-2 rounded-full bg-[#f2730c] text-black font-medium hover:bg-[#ffa94d] transition">
+          🎥 Watch Tutorial
+        </a>
+      </div>
+    </div>
+
+    <!-- 4. Face Pulls -->
+    <div class="flex flex-col md:flex-row-reverse bg-[#493322] rounded-xl overflow-hidden">
+      <img src="images/face-pulls.jpg" alt="Face Pulls" class="md:w-1/2 h-64 object-cover" />
+      <div class="p-6 md:p-10 md:w-1/2 space-y-3">
+        <h3 class="text-2xl font-semibold mb-2">Face Pulls</h3>
+        <ul class="list-disc list-inside text-[#cba990] text-sm space-y-1">
+          <li>Use rope attachment at face height</li>
+          <li>Pull towards forehead, elbows out</li>
+          <li>3 sets of 15 reps</li>
+        </ul>
+        <a href="https://www.youtube.com/watch?v=rep-qVOkqgk" target="_blank"
+           class="inline-block text-sm px-4 py-2 rounded-full bg-[#f2730c] text-black font-medium hover:bg-[#ffa94d] transition">
+          🎥 Watch Tutorial
+        </a>
+      </div>
+    </div>
+
+    <!-- 5. Farmer’s Carry -->
+    <div class="flex flex-col md:flex-row bg-[#493322] rounded-xl overflow-hidden">
+      <img src="images/farmers-carry.jpg" alt="Farmer’s Carry" class="md:w-1/2 h-64 object-cover" />
+      <div class="p-6 md:p-10 md:w-1/2 space-y-3">
+        <h3 class="text-2xl font-semibold mb-2">Farmer’s Carry</h3>
+        <ul class="list-disc list-inside text-[#cba990] text-sm space-y-1">
+          <li>Hold heavy weights and walk steady</li>
+          <li>Keep core and traps engaged</li>
+          <li>4 rounds of 30 seconds</li>
+        </ul>
+        <a href="https://www.youtube.com/watch?v=qUjPZRDk4qU" target="_blank"
+           class="inline-block text-sm px-4 py-2 rounded-full bg-[#f2730c] text-black font-medium hover:bg-[#ffa94d] transition">
+          🎥 Watch Tutorial
+        </a>
+      </div>
+    </div>
+
+    <!-- 6. Smith Machine Shrugs -->
+    <div class="flex flex-col md:flex-row-reverse bg-[#493322] rounded-xl overflow-hidden">
+      <img src="images/smith-shrugs.jpg" alt="Smith Machine Shrugs" class="md:w-1/2 h-64 object-cover" />
+      <div class="p-6 md:p-10 md:w-1/2 space-y-3">
+        <h3 class="text-2xl font-semibold mb-2">Smith Machine Shrugs</h3>
+        <ul class="list-disc list-inside text-[#cba990] text-sm space-y-1">
+          <li>Feet shoulder-width apart</li>
+          <li>Grip bar just outside thighs and shrug</li>
+          <li>3 sets of 15 reps</li>
+        </ul>
+        <a href="https://www.youtube.com/watch?v=H6_GwWoj1i4" target="_blank"
+           class="inline-block text-sm px-4 py-2 rounded-full bg-[#f2730c] text-black font-medium hover:bg-[#ffa94d] transition">
+          🎥 Watch Tutorial
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
    </div>
     <!-- Footer -->
